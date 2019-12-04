@@ -62,5 +62,20 @@ var getMeSpotify = function(songName) {
 
 };
 
+// getbands function
 
+var getMyBands = function(artist) {
+  var queryURL = `https://rest.bandsintown.com/artists/${artist}/events?app_id=codingbootcamp`;
+
+  axios.get(queryURL).then(
+    function(response) {
+      var jsonData = response.data;
+      if (!jsonData.length) {
+        console.log("No results found for " + artist);
+        return;
+      }
+
+      console.log(`pcoming concerts for${artist}:`);
+      for (var i = 0; i < jsonData.length; i++) {
+        var show = jsonData[i];
 
