@@ -71,7 +71,7 @@ var getMyBands = function(artist) {
     function(response) {
       var jsonData = response.data;
       if (!jsonData.length) {
-        console.log("No results found for " + artist);
+        console.log(`No results found for${artist}`);
         return;
       }
 
@@ -143,8 +143,6 @@ var doWhatItSays = function() {
   });
 
 };
-
-
 
 // Function for determining which command is executed
 var pick = function(caseData, functionData) {
